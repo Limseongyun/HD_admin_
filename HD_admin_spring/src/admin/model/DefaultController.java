@@ -8,5 +8,6 @@ public class DefaultController {
 	@RequestMapping(value = "/")
 	public String index() {
 		return "index";
+		//¤Ð¤Ð
 	}
 }
