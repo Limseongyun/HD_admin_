@@ -20,14 +20,19 @@
 
             
             // UI Components Initialize
-            obj = new Button("Button00","38","58","186","66",null,null,null,null,null,null,this);
+            obj = new Button("Button00","50","40","280","68",null,null,null,null,null,null,this);
             obj.set_taborder("0");
-            obj.set_text("this is test");
+            obj.set_text("계좌 추가로 이동하기(예금,적금,자격조건)");
             this.addChild(obj.name, obj);
 
-            obj = new Button("Button01","268","68","98","41",null,null,null,null,null,null,this);
+            obj = new Button("Button01","48","148","292","86",null,null,null,null,null,null,this);
             obj.set_taborder("1");
-            obj.set_text("lsyv1");
+            obj.set_text("계좌설정 이동하기(계좌상세페이지)");
+            this.addChild(obj.name, obj);
+
+            obj = new Button("Button02","48","264","293","102",null,null,null,null,null,null,this);
+            obj.set_taborder("2");
+            obj.set_text("은행업무페이지 이동하기");
             this.addChild(obj.name, obj);
 
             // Layout Functions
@@ -49,12 +54,17 @@
 
         this.Button00_onclick = function(obj,e)
         {
-        	this.alert('this is test')
+        	 this.go("FrameBase::AccountAdd.xfdl");
         };
 
         this.Button01_onclick = function(obj,e)
         {
+        	this.go("FrameBase::AccountSet.xfdl");
+        };
 
+        this.Button02_onclick = function(obj,e)
+        {
+        	this.go("FrameBase::Bangking.xfdl");
         };
 
         });
@@ -64,6 +74,7 @@
         {
             this.Button00.addEventHandler("onclick",this.Button00_onclick,this);
             this.Button01.addEventHandler("onclick",this.Button01_onclick,this);
+            this.Button02.addEventHandler("onclick",this.Button02_onclick,this);
         };
 
         this.loadIncludeScript("Form_Work.xfdl");
