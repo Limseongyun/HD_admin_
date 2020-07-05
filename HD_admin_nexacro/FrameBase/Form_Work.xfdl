@@ -1,3 +1,27 @@
+<<<<<<< HEAD
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="Form_Work" width="1280" height="720" titletext="Form_Work">
+    <Layouts>
+      <Layout width="1280" height="720" screenid="Desktop_screen">
+        <Button id="Button00" taborder="0" text="this is test" left="38" top="58" width="186" height="66" onclick="Button00_onclick"/>
+        <Button id="Button01" taborder="1" text="lsyv1" left="268" top="68" width="98" height="41" onclick="Button01_onclick"/>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.alert('this is test')
+};
+
+this.Button01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	
+};
+]]></Script>
+  </Form>
+</FDL>
+=======
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <FDL version="2.1">
   <Form id="Form_Work" width="1280" height="720" titletext="Form_Work">
@@ -21,3 +45,4 @@ this.Button01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 ]]></Script>
   </Form>
 </FDL>
+>>>>>>> branch 'master' of https://github.com/Limseongyun/HD_admin_.git
