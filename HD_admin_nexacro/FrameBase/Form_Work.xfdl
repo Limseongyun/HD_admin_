@@ -6,6 +6,7 @@
         <Button id="Button00" taborder="0" text="계좌 추가로 이동하기(예금,적금,자격조건)" left="50" top="40" width="280" height="68" onclick="Button00_onclick"/>
         <Button id="Button01" taborder="1" text="계좌설정 이동하기(계좌상세페이지)" left="48" top="148" width="292" height="86" onclick="Button01_onclick"/>
         <Button id="Button02" taborder="2" text="은행업무페이지 이동하기" left="48" top="264" width="293" height="102" onclick="Button02_onclick"/>
+        <Button id="Button03" taborder="3" text="프로덕트추가및 계좌수정 으로 이동하기" left="356" top="40" width="224" height="70" onclick="Button03_onclick"/>
       </Layout>
     </Layouts>
     <Script type="xscript5.1"><![CDATA[
@@ -22,6 +23,11 @@ this.Button01_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 this.Button02_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
 	this.go("FrameBase::Bangking.xfdl");
+};
+
+this.Button03_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.go("FrameBase::ProductAdd.xfdl");
 };
 ]]></Script>
   </Form>
