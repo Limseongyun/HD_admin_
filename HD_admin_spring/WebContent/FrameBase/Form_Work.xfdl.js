@@ -35,6 +35,11 @@
             obj.set_text("은행업무페이지 이동하기");
             this.addChild(obj.name, obj);
 
+            obj = new Button("Button03","356","40","224","70",null,null,null,null,null,null,this);
+            obj.set_taborder("3");
+            obj.set_text("프로덕트추가및 계좌수정 으로 이동하기");
+            this.addChild(obj.name, obj);
+
             // Layout Functions
             //-- Default Layout : this
             obj = new Layout("default","Desktop_screen",1280,720,this,function(p){});
@@ -67,6 +72,11 @@
         	this.go("FrameBase::Bangking.xfdl");
         };
 
+        this.Button03_onclick = function(obj,e)
+        {
+        	this.go("FrameBase::ProductAdd.xfdl");
+        };
+
         });
         
         // Regist UI Components Event
@@ -75,6 +85,7 @@
             this.Button00.addEventHandler("onclick",this.Button00_onclick,this);
             this.Button01.addEventHandler("onclick",this.Button01_onclick,this);
             this.Button02.addEventHandler("onclick",this.Button02_onclick,this);
+            this.Button03.addEventHandler("onclick",this.Button03_onclick,this);
         };
 
         this.loadIncludeScript("Form_Work.xfdl");
