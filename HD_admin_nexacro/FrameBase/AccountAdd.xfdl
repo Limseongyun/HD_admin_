@@ -1,0 +1,92 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<FDL version="2.1">
+  <Form id="AccountAdd" width="1280" height="720" titletext="New Form">
+    <Layouts>
+      <Layout height="720" mobileorientation="landscape" width="1280">
+        <Button id="Button00" taborder="0" text="Back" left="4" top="8" width="72" height="40" onclick="Button00_onclick"/>
+        <Div id="Div00" taborder="1" text="Div00" left="90" top="57" width="1156" height="203" border="1px solid">
+          <Layouts>
+            <Layout>
+              <Grid id="Grid00" taborder="0" left="509" top="30" width="644" height="162" binddataset="QualificationList">
+                <Formats>
+                  <Format id="default">
+                    <Columns>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                      <Column size="80"/>
+                    </Columns>
+                    <Rows>
+                      <Row band="head" size="24"/>
+                      <Row size="24"/>
+                    </Rows>
+                    <Band id="head">
+                      <Cell text="qua_code"/>
+                      <Cell col="1" text="qua_name"/>
+                      <Cell col="2" text="qua_maxage"/>
+                      <Cell col="3" text="qua_minage"/>
+                      <Cell col="4" text="qua_maxmoney"/>
+                      <Cell col="5" text="qua_minmoney"/>
+                      <Cell col="6" text="qua_maxperiod"/>
+                      <Cell col="7" text="qua_minperiod"/>
+                    </Band>
+                    <Band id="body">
+                      <Cell text="bind:qua_code"/>
+                      <Cell col="1" text="bind:qua_name"/>
+                      <Cell col="2" text="bind:qua_maxage"/>
+                      <Cell col="3" text="bind:qua_minage"/>
+                      <Cell col="4" text="bind:qua_maxmoney"/>
+                      <Cell col="5" text="bind:qua_minmoney"/>
+                      <Cell col="6" text="bind:qua_maxperiod"/>
+                      <Cell col="7" text="bind:qua_minperiod"/>
+                    </Band>
+                  </Format>
+                </Formats>
+              </Grid>
+              <Button id="Button00" taborder="1" text="자격조건조회" left="508" top="6" width="91" height="24" onclick="Div00_Button00_onclick"/>
+            </Layout>
+          </Layouts>
+        </Div>
+      </Layout>
+    </Layouts>
+    <Script type="xscript5.1"><![CDATA[
+this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	this.go("FrameBase::Form_Work.xfdl");
+};
+
+this.Div00_Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var id="urlTest";
+	var url = "http://192.168.25.14:8100/HD_admin_spring/qualification_list;
+	var reqDs = "";
+	var respDs="QualificationList=ar";
+	var args = "";
+	var callback ="received";
+	this.transaction(id,url,reqDs,respDs,args,callback);
+	this.received=function(id,code,message)
+	{
+		alert(id+","+code+","+message);
+	};
+};
+]]></Script>
+    <Objects>
+      <Dataset id="QualificationList">
+        <ColumnInfo>
+          <Column id="qua_code" type="INT" size="256"/>
+          <Column id="qua_name" type="STRING" size="256"/>
+          <Column id="qua_maxage" type="INT" size="256"/>
+          <Column id="qua_minage" type="INT" size="256"/>
+          <Column id="qua_maxmoney" type="INT" size="256"/>
+          <Column id="qua_minmoney" type="INT" size="256"/>
+          <Column id="qua_maxperiod" type="INT" size="256"/>
+          <Column id="qua_minperiod" type="INT" size="256"/>
+        </ColumnInfo>
+      </Dataset>
+    </Objects>
+  </Form>
+</FDL>
