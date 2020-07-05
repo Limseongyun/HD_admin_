@@ -4,10 +4,10 @@
     <Layouts>
       <Layout height="720" mobileorientation="landscape" width="1280">
         <Button id="Button00" taborder="0" text="Back" left="4" top="8" width="72" height="40" onclick="Button00_onclick"/>
-        <Div id="Div00" taborder="1" text="Div00" left="90" top="57" width="1156" height="203" border="1px solid">
+        <Div id="qua_div" taborder="1" text="Div00" left="92" top="10" width="1156" height="203" border="1px solid">
           <Layouts>
             <Layout>
-              <Grid id="Grid00" taborder="0" left="509" top="30" width="644" height="162" binddataset="QualificationList">
+              <Grid id="Grid00" taborder="0" left="497" top="30" width="656" height="162" binddataset="QualificationList">
                 <Formats>
                   <Format id="default">
                     <Columns>
@@ -47,7 +47,25 @@
                   </Format>
                 </Formats>
               </Grid>
-              <Button id="Button00" taborder="1" text="자격조건조회" left="508" top="6" width="91" height="24" onclick="Div00_Button00_onclick"/>
+              <Button id="qualification_list" taborder="1" text="자격조건 조회" left="513" top="2" width="133" height="26" onclick="qua_div_qualification_list"/>
+              <Static id="Static00" taborder="2" text="qua_name" left="80" top="17" width="72" height="24"/>
+              <Edit id="qua_namev" taborder="3" left="160" top="13" width="92" height="35"/>
+              <Static id="Static00_00" taborder="4" text="qua_maxage" left="72" top="58" width="72" height="24"/>
+              <Edit id="qua_maxagev" taborder="5" left="160" top="55" width="92" height="35"/>
+              <Static id="Static00_01" taborder="6" text="qua_minage" left="72" top="99" width="72" height="24"/>
+              <Edit id="qua_minagev" taborder="7" left="160" top="94" width="92" height="35"/>
+              <Static id="Static00_02" taborder="8" text="qua_maxmoney" left="280" top="12" width="100" height="24"/>
+              <Edit id="qua_maxmoneyv" taborder="9" left="388" top="13" width="92" height="35"/>
+              <Static id="Static00_03" taborder="10" text="qua_minperiod" left="285" top="60" width="90" height="24"/>
+              <Edit id="qua_minperiodv" taborder="11" left="388" top="55" width="92" height="35"/>
+              <Static id="Static00_04" taborder="12" text="qua_maxperiod" left="280" top="101" width="90" height="24"/>
+              <Edit id="qua_maxperiodv" taborder="13" left="388" top="96" width="92" height="35"/>
+              <Static id="Static00_05" taborder="14" text="qua_minmoney" left="54" top="140" width="90" height="24" onchanged="Common_onchanged"/>
+              <Edit id="qua_minmoneyv" taborder="15" left="160" top="135" width="92" height="35" onchanged="Common_onchanged"/>
+              <Button id="qua_insert" taborder="16" text="입력" left="360" top="149" width="80" height="31" onclick="qua_div_qua_insert_onclick"/>
+              <Button id="qua_delete" taborder="17" text="자격조건삭제" left="1040" top="0" width="100" height="26" onclick="qua_div_qua_delete_onclick"/>
+              <Static id="Static01" taborder="18" text="삭제할qua_code:" left="873" top="1" width="97" height="27"/>
+              <Edit id="del_qua_codev" taborder="19" left="978" top="5" width="51" height="21"/>
             </Layout>
           </Layouts>
         </Div>
@@ -59,13 +77,13 @@ this.Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 	this.go("FrameBase::Form_Work.xfdl");
 };
 
-this.Div00_Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+this.qua_div_qualification_list = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
 {
-	var id="urlTest";
-	var url = "http://192.168.25.14:8100/HD_admin_spring/qualification_list;
+	var id="qualificationlist";
+	var url = "http://192.168.25.14:8100/HD_admin_spring/qualification_list";
 	var reqDs = "";
 	var respDs="QualificationList=ar";
-	var args = "";
+	var args ="";
 	var callback ="received";
 	this.transaction(id,url,reqDs,respDs,args,callback);
 	this.received=function(id,code,message)
@@ -73,11 +91,55 @@ this.Div00_Button00_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventIn
 		alert(id+","+code+","+message);
 	};
 };
+
+
+
+this.qua_div_qua_delete_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var del_qua_codev=this.qua_div.form.del_qua_codev.value
+	var id="qualificationinsert";
+	var url = "http://192.168.25.14:8100/HD_admin_spring/qualification_delete?qua_code="+del_qua_codev;
+	var reqDs = "";
+	var respDs="";
+	var args = "";
+	var callback ="received";
+	this.transaction(id,url,reqDs,respDs,args,callback);
+	this.received=function(id,code,message)
+	{
+		alert(id+","+code+","+message);
+	};		
+};
+
+this.qua_div_qua_insert_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var qua_namev=this.qua_div.form.qua_namev.value
+	var qua_maxagev=this.qua_div.form.qua_maxagev.value
+	var qua_minagev=this.qua_div.form.qua_minagev.value
+	var qua_minmoneyv=this.qua_div.form.qua_minmoneyv.value
+	var qua_maxmoneyv=this.qua_div.form.qua_maxmoneyv.value
+	var qua_minperiodv=this.qua_div.form.qua_minperiodv.value
+	var qua_maxperiodv=this.qua_div.form.qua_maxperiodv.value
+	this.alert(qua_namev+","+qua_maxagev+","+qua_minagev
+				+","+qua_minmoneyv+","+qua_maxmoneyv+","+qua_minperiodv
+				+","+qua_maxperiodv)
+	var id="qualificationinsert";
+	var url = "http://192.168.25.14:8100/HD_admin_spring/qualification_insert?qua_name="+qua_namev+"&qua_maxage="+qua_maxagev+"&qua_minage="+qua_minagev+"&qua_minmoney="+qua_minmoneyv+"&qua_maxmoney="+qua_maxmoneyv+"&qua_minperiod="+qua_minperiodv+"&qua_maxperiod="+qua_maxperiodv;
+	var reqDs = "";
+	var respDs="";
+	var args = "";
+	var callback ="received";
+	this.transaction(id,url,reqDs,respDs,args,callback);
+	this.received=function(id,code,message)
+	{
+		alert(id+","+code+","+message);
+	};		
+		
+};
 ]]></Script>
     <Objects>
       <Dataset id="QualificationList">
         <ColumnInfo>
-          <Column id="qua_code" type="INT" size="256"/>
+          <Column id="qua_code" type="INT" size="256" sumtext="" description=""/>
           <Column id="qua_name" type="STRING" size="256"/>
           <Column id="qua_maxage" type="INT" size="256"/>
           <Column id="qua_minage" type="INT" size="256"/>

@@ -8,6 +8,25 @@
       <XCSS rule_version="1.04"/>
       <Script rule_version="1.02"/>
     </Rule>
-    <Info project="C:\Users\lsy\git\what\HD_admin_\HD_admin_nexacro\" generated="C:\Users\lsy\git\what\HD_admin_\HD_admin_spring\WebContent\"><File url="environment.xml" checksum="20200701062326" errormsg=""/><File url="typedefinition.xml" checksum="20200701062326" errormsg=""/><File url="appvariables.xml" checksum="20200701062326" errormsg=""/><File url="_resource_\_theme_\default\theme.xcss" checksum="20200701062326" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\framework\Framework.json" checksum="20200527181350" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\resources\Resource.json" checksum="20200527181350" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\CompBase.json" checksum="20200527181348" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\ComComp.json" checksum="20200527181348" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\Grid.json" checksum="20200527181348" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\ListView.json" checksum="20200527181350" errormsg=""/><File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\DeviceAPI.json" checksum="20200527181348" errormsg=""/><File url="FrameBase\Form_Work.xfdl" checksum="20200705171505" errormsg=""/><File url="Base\AccountAdd.xfdl" checksum="20200705165657" errormsg=""/><File url="FrameBase\AccountAdd.xfdl" checksum="20200705202055" errormsg="Unterminated string constant. : C:\Users\lsy\git\what\HD_admin_\HD_admin_nexacro\FrameBase\AccountAdd.xfdl [Line : 8]"/><File url="Application_Desktop.xadl" checksum="20200701062326" errormsg=""/><File url="FrameBase\AccountSet.xfdl" checksum="20200705171652" errormsg=""/><File url="Base\Bangking.xfdl" checksum="20200705171412" errormsg=""/><File url="FrameBase\Bangking.xfdl" checksum="20200705171703" errormsg=""/></Info>
+    <Info project="C:\Users\lsy\git\what\HD_admin_\HD_admin_nexacro\" generated="C:\Users\lsy\git\what\HD_admin_\HD_admin_spring\WebContent\">
+      <File url="environment.xml" checksum="20200701062326" errormsg=""/>
+      <File url="typedefinition.xml" checksum="20200701062326" errormsg=""/>
+      <File url="appvariables.xml" checksum="20200701062326" errormsg=""/>
+      <File url="_resource_\_theme_\default\theme.xcss" checksum="20200701062326" errormsg=""/>
+      <File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\framework\Framework.json" checksum="20200527181350" errormsg=""/>
+      <File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\resources\Resource.json" checksum="20200527181350" errormsg=""/>
+      <File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\CompBase.json" checksum="20200527181348" errormsg=""/>
+      <File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\ComComp.json" checksum="20200527181348" errormsg=""/>
+      <File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\Grid.json" checksum="20200527181348" errormsg=""/>
+      <File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\ListView.json" checksum="20200527181350" errormsg=""/>
+      <File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\DeviceAPI.json" checksum="20200527181348" errormsg=""/>
+      <File url="FrameBase\Form_Work.xfdl" checksum="20200705171505" errormsg=""/>
+      <File url="Base\AccountAdd.xfdl" checksum="20200705165657" errormsg=""/>
+      <File url="FrameBase\AccountAdd.xfdl" checksum="20200706023000" errormsg=""/>
+      <File url="Application_Desktop.xadl" checksum="20200701062326" errormsg=""/>
+      <File url="FrameBase\AccountSet.xfdl" checksum="20200705171652" errormsg=""/>
+      <File url="Base\Bangking.xfdl" checksum="20200705171412" errormsg=""/>
+      <File url="FrameBase\Bangking.xfdl" checksum="20200705171703" errormsg=""/>
+    </Info>
   </GenInfo>
 </root>
