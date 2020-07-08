@@ -34,15 +34,15 @@
                       </Format>
                     </Formats>
                   </Grid>
-                  <Static id="Static00" taborder="1" text="pro_code" left="22" top="31" width="141" height="43" onclick="Tab00_Product_Static00_onclick"/>
-                  <Edit id="Edit00" taborder="2" left="186" top="25" width="159" height="60"/>
-                  <Edit id="Edit00_00" taborder="3" left="186" top="105" width="159" height="60"/>
-                  <Static id="Static00_00" taborder="4" text="ins_code" left="22" top="111" width="141" height="43" onclick="Tab00_Product_Static00_onclick"/>
-                  <Edit id="Edit00_01" taborder="5" left="186" top="183" width="159" height="60"/>
-                  <Static id="Static00_01" taborder="6" text="sav_code" left="22" top="189" width="141" height="43" onclick="Tab00_Product_Static00_onclick"/>
-                  <Button id="Button00" taborder="7" text="등록" left="257" top="285" width="145" height="45"/>
-                  <Combo id="Combo00" taborder="8" text="Combo00" left="256" top="420" width="122" height="43"/>
-                  <Button id="Button01" taborder="9" text="Button01" left="572" top="11" width="214" height="22"/>
+                  <Static id="Static00" taborder="0" text="pro_code" left="22" top="31" width="141" height="43" onclick="Tab00_Product_Static00_onclick"/>
+                  <Edit id="pro_codev" taborder="2" left="186" top="25" width="159" height="60"/>
+                  <Static id="Static00_00" taborder="3" text="ins_code" left="22" top="111" width="141" height="43" onclick="Tab00_Product_Static00_onclick"/>
+                  <Static id="Static00_01" taborder="4" text="sav_code" left="22" top="189" width="141" height="43" onclick="Tab00_Product_Static00_onclick"/>
+                  <Button id="Button00" taborder="5" text="등록" left="257" top="285" width="145" height="45"/>
+                  <Combo id="Combo00" taborder="6" text="Combo00" left="256" top="420" width="122" height="43"/>
+                  <Button id="Button01" taborder="7" text="Button01" left="572" top="11" width="214" height="22"/>
+                  <Combo id="ins_codev" taborder="8" text="Combo01" left="185" top="103" width="161" height="45"/>
+                  <Combo id="sav_codev" taborder="9" text="Combo02" left="182" top="186" width="168" height="49"/>
                 </Layout>
               </Layouts>
             </Tabpage>
@@ -169,8 +169,8 @@
                   <Static id="Static00_02" taborder="8" text="sav_online" left="23" top="141" width="124" height="18"/>
                   <Static id="Static00_03" taborder="9" text="shas_code" left="20" top="171" width="123" height="30"/>
                   <Static id="Static00_04" taborder="10" text="qua_code" left="26" top="211" width="123" height="23"/>
-                  <Combo id="qua_codev" taborder="11" text="Combo00" left="167" top="211" width="143" height="29"/>
-                  <CheckBox id="CheckBox00" taborder="12" text="공유여부" left="320" top="173" width="110" height="28"/>
+                  <Combo id="qua_codev" taborder="11" text="Combo00" left="161" top="210" width="143" height="29"/>
+                  <CheckBox id="shas_code_chk" taborder="12" text="공유여부" left="320" top="173" width="110" height="28"/>
                   <Combo id="shas_codev" taborder="13" text="Combo01" left="163" top="172" width="139" height="30"/>
                   <Div id="Div00" taborder="14" text="Div00" left="11" top="324" width="1170" height="258" border="1px dotted">
                     <Layouts>
@@ -268,24 +268,23 @@
                   <Edit id="ins_codev" taborder="2" left="109" top="4" width="68" height="30"/>
                   <Edit id="ins_name" taborder="3" left="110" top="39" width="68" height="30"/>
                   <Static id="Static00_00" taborder="4" text="ins_name" left="14" top="46" width="67" height="19"/>
-                  <Edit id="Edit00_01" taborder="5" left="111" top="74" width="68" height="30"/>
-                  <Static id="Static00_01" taborder="6" text="ins_online" left="15" top="81" width="67" height="19"/>
-                  <Edit id="Edit00_02" taborder="7" left="112" top="113" width="68" height="30"/>
-                  <Static id="Static00_02" taborder="8" text="ins_interestrate" left="16" top="120" width="93" height="20"/>
-                  <Edit id="Edit00_03" taborder="9" left="112" top="159" width="68" height="30"/>
-                  <Static id="Static00_03" taborder="10" text="ins_droprate" left="16" top="166" width="76" height="19"/>
-                  <Edit id="Edit00_04" taborder="11" left="114" top="199" width="68" height="30"/>
-                  <Static id="Static00_04" taborder="12" text="ins_putmoney" left="18" top="206" width="84" height="19"/>
-                  <Edit id="Edit00_05" taborder="13" left="263" top="6" width="77" height="30"/>
-                  <Static id="Static00_05" taborder="14" text="ins_term" left="185" top="12" width="67" height="19"/>
-                  <Static id="Static00_06" taborder="15" text="shac_code" left="186" top="46" width="67" height="19"/>
-                  <Static id="Static00_07" taborder="16" text="qua_code" left="187" top="117" width="67" height="19"/>
-                  <Button id="Button00" taborder="17" text="적금조회" left="611" top="5" width="105" height="22"/>
-                  <Button id="Button02" taborder="18" text="등록" left="225" top="183" width="111" height="20"/>
-                  <Combo id="Combo00" taborder="19" text="Combo00" left="265" top="48" width="75" height="26"/>
-                  <Combo id="Combo01" taborder="20" text="Combo01" left="265" top="117" width="75" height="26"/>
-                  <CheckBox id="CheckBox00" taborder="21" text="공유여부" left="242" top="81" width="98" height="19"/>
-                  <Div id="Div00" taborder="22" text="Div00" left="20" top="310" width="1102" height="261" border="1px dotted">
+                  <Static id="Static00_01" taborder="5" text="ins_online" left="15" top="81" width="67" height="19"/>
+                  <Edit id="ins_interestratev" taborder="6" left="112" top="113" width="68" height="30"/>
+                  <Static id="Static00_02" taborder="7" text="ins_interestrate" left="16" top="120" width="93" height="20"/>
+                  <Edit id="ins_dropratev" taborder="8" left="112" top="159" width="68" height="30"/>
+                  <Static id="Static00_03" taborder="9" text="ins_droprate" left="16" top="166" width="76" height="19"/>
+                  <Edit id="ins_putmoneyv" taborder="10" left="114" top="199" width="68" height="30"/>
+                  <Static id="Static00_04" taborder="11" text="ins_putmoney" left="18" top="206" width="84" height="19"/>
+                  <Edit id="ins_termv" taborder="12" left="263" top="6" width="77" height="30"/>
+                  <Static id="Static00_05" taborder="13" text="ins_term" left="185" top="12" width="67" height="19"/>
+                  <Static id="Static00_06" taborder="14" text="shac_code" left="186" top="46" width="67" height="19"/>
+                  <Static id="Static00_07" taborder="15" text="qua_code" left="187" top="117" width="67" height="19"/>
+                  <Button id="Button00" taborder="16" text="적금조회" left="611" top="5" width="105" height="22"/>
+                  <Button id="Button02" taborder="17" text="등록" left="225" top="183" width="111" height="20"/>
+                  <Combo id="shac_codev" taborder="18" text="Combo00" left="265" top="48" width="75" height="26"/>
+                  <Combo id="ins_qua_codev" taborder="19" text="Combo01" left="265" top="117" width="75" height="26"/>
+                  <CheckBox id="shac_code_chk" taborder="20" text="공유여부" left="290" top="74" width="106" height="21"/>
+                  <Div id="Div00" taborder="21" text="Div00" left="20" top="310" width="1102" height="261" border="1px dotted">
                     <Layouts>
                       <Layout>
                         <Grid id="Shared_Challenge" taborder="0" left="440" top="40" width="646" height="201" binddataset="Shared_Challenge">
@@ -314,18 +313,19 @@
                           </Formats>
                         </Grid>
                         <Static id="Static00" taborder="1" text="shac_code" left="23" top="30" width="102" height="30"/>
-                        <Edit id="Edit00" taborder="2" left="141" top="25" width="119" height="35"/>
-                        <Edit id="Edit00_00" taborder="3" left="141" top="73" width="119" height="35"/>
+                        <Edit id="shac_codev" taborder="2" left="141" top="25" width="119" height="35"/>
+                        <Edit id="shac_mannumv" taborder="3" left="141" top="73" width="119" height="35"/>
                         <Static id="Static00_00" taborder="4" text="shac_mannum" left="23" top="78" width="102" height="30"/>
-                        <Edit id="Edit00_01" taborder="5" left="141" top="115" width="119" height="35"/>
+                        <Edit id="shac_masterv" taborder="5" left="141" top="115" width="119" height="35"/>
                         <Static id="Static00_01" taborder="6" text="shac_master" left="23" top="120" width="102" height="30"/>
                         <Button id="Button00" taborder="7" text="Button00" left="445" top="6" width="209" height="28"/>
                         <Button id="Button01" taborder="8" text="Button01" left="201" top="174" width="136" height="36"/>
                       </Layout>
                     </Layouts>
                   </Div>
-                  <Button id="Button01" taborder="23" text="삭제" left="287" top="259" width="91" height="29"/>
-                  <Combo id="Combo02" taborder="24" text="Combo02" left="194" top="260" width="83" height="30"/>
+                  <Button id="Button01" taborder="22" text="삭제" left="287" top="259" width="91" height="29"/>
+                  <Combo id="Combo02" taborder="23" text="Combo02" left="194" top="260" width="83" height="30"/>
+                  <CheckBox id="ins_online_chk" taborder="24" text="CheckBox01" left="110" top="78" width="70" height="27"/>
                 </Layout>
               </Layouts>
             </Tabpage>
