@@ -20,7 +20,7 @@
       <File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\Grid.json" checksum="20200527181348" errormsg=""/>
       <File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\ListView.json" checksum="20200527181350" errormsg=""/>
       <File url="C:\Program Files (x86)\nexacro\17.1\nexacro17lib\component\DeviceAPI.json" checksum="20200527181348" errormsg=""/>
-      <File url="FrameBase\AccountAdd.xfdl" checksum="20200706184419" errormsg=""/>
+      <File url="FrameBase\AccountAdd.xfdl" checksum="20200708093554" errormsg=""/>
       <File url="Application_Desktop.xadl" checksum="20200706095525" errormsg=""/>
     </Info>
   </GenInfo>
