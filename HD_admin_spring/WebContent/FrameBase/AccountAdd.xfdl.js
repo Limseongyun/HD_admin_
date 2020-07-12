@@ -438,7 +438,7 @@
             obj.set_enable("false");
             this.Tab00.Installment_Saving_tab.addChild(obj.name, obj);
 
-            obj = new Edit("ins_name","110","39","68","30",null,null,null,null,null,null,this.Tab00.Installment_Saving_tab.form);
+            obj = new Edit("ins_namev","110","39","68","30",null,null,null,null,null,null,this.Tab00.Installment_Saving_tab.form);
             obj.set_taborder("3");
             this.Tab00.Installment_Saving_tab.addChild(obj.name, obj);
 
@@ -498,23 +498,27 @@
             obj.set_text("qua_code");
             this.Tab00.Installment_Saving_tab.addChild(obj.name, obj);
 
-            obj = new Button("Button00","611","5","105","22",null,null,null,null,null,null,this.Tab00.Installment_Saving_tab.form);
+            obj = new Button("installment_saving_inquire","407","8","105","22",null,null,null,null,null,null,this.Tab00.Installment_Saving_tab.form);
             obj.set_taborder("16");
             obj.set_text("적금조회");
             this.Tab00.Installment_Saving_tab.addChild(obj.name, obj);
 
-            obj = new Button("Button02","225","183","111","20",null,null,null,null,null,null,this.Tab00.Installment_Saving_tab.form);
+            obj = new Button("installment_saving_add_btn","225","183","121","50",null,null,null,null,null,null,this.Tab00.Installment_Saving_tab.form);
             obj.set_taborder("17");
             obj.set_text("등록");
             this.Tab00.Installment_Saving_tab.addChild(obj.name, obj);
 
             obj = new Combo("shac_codev","265","48","75","26",null,null,null,null,null,null,this.Tab00.Installment_Saving_tab.form);
             obj.set_taborder("18");
+            obj.set_innerdataset("Shared_Challenge");
+            obj.set_codecolumn("shac_code");
             obj.set_text("Combo00");
             this.Tab00.Installment_Saving_tab.addChild(obj.name, obj);
 
             obj = new Combo("ins_qua_codev","265","117","75","26",null,null,null,null,null,null,this.Tab00.Installment_Saving_tab.form);
             obj.set_taborder("19");
+            obj.set_innerdataset("QualificationList");
+            obj.set_codecolumn("qua_code");
             obj.set_text("Combo01");
             this.Tab00.Installment_Saving_tab.addChild(obj.name, obj);
 
@@ -523,68 +527,87 @@
             obj.set_text("공유여부");
             this.Tab00.Installment_Saving_tab.addChild(obj.name, obj);
 
-            obj = new Div("Div00","20","310","1102","261",null,null,null,null,null,null,this.Tab00.Installment_Saving_tab.form);
+            obj = new Div("shac_div","20","310","1102","261",null,null,null,null,null,null,this.Tab00.Installment_Saving_tab.form);
             obj.set_taborder("21");
             obj.set_text("Div00");
             obj.set_border("1px dotted");
             this.Tab00.Installment_Saving_tab.addChild(obj.name, obj);
 
-            obj = new Grid("Shared_Challenge","440","40","646","201",null,null,null,null,null,null,this.Tab00.Installment_Saving_tab.form.Div00.form);
+            obj = new Grid("Shared_ChallengeGrid","440","40","646","201",null,null,null,null,null,null,this.Tab00.Installment_Saving_tab.form.shac_div.form);
             obj.set_taborder("0");
             obj.set_binddataset("Shared_Challenge");
             obj._setContents("<Formats><Format id=\"default\"><Columns><Column size=\"80\"/><Column size=\"80\"/><Column size=\"80\"/></Columns><Rows><Row band=\"head\" size=\"24\"/><Row size=\"24\"/></Rows><Band id=\"head\"><Cell text=\"shac_code\"/><Cell col=\"1\" text=\"shac_mannum\"/><Cell col=\"2\" text=\"shac_master\"/></Band><Band id=\"body\"><Cell text=\"bind:shac_code\"/><Cell col=\"1\" text=\"bind:shac_mannum\"/><Cell col=\"2\" text=\"bind:shac_master\"/></Band></Format></Formats>");
-            this.Tab00.Installment_Saving_tab.form.Div00.addChild(obj.name, obj);
+            this.Tab00.Installment_Saving_tab.form.shac_div.addChild(obj.name, obj);
 
-            obj = new Static("Static00","23","30","102","30",null,null,null,null,null,null,this.Tab00.Installment_Saving_tab.form.Div00.form);
+            obj = new Static("Static00","23","30","102","30",null,null,null,null,null,null,this.Tab00.Installment_Saving_tab.form.shac_div.form);
             obj.set_taborder("1");
             obj.set_text("shac_code");
-            this.Tab00.Installment_Saving_tab.form.Div00.addChild(obj.name, obj);
+            this.Tab00.Installment_Saving_tab.form.shac_div.addChild(obj.name, obj);
 
-            obj = new Edit("shac_codev","141","25","119","35",null,null,null,null,null,null,this.Tab00.Installment_Saving_tab.form.Div00.form);
+            obj = new Edit("shac_codev","141","25","119","35",null,null,null,null,null,null,this.Tab00.Installment_Saving_tab.form.shac_div.form);
             obj.set_taborder("2");
-            this.Tab00.Installment_Saving_tab.form.Div00.addChild(obj.name, obj);
+            obj.set_enable("false");
+            this.Tab00.Installment_Saving_tab.form.shac_div.addChild(obj.name, obj);
 
-            obj = new Edit("shac_mannumv","141","73","119","35",null,null,null,null,null,null,this.Tab00.Installment_Saving_tab.form.Div00.form);
+            obj = new Edit("shac_mannumv","141","73","119","35",null,null,null,null,null,null,this.Tab00.Installment_Saving_tab.form.shac_div.form);
             obj.set_taborder("3");
-            this.Tab00.Installment_Saving_tab.form.Div00.addChild(obj.name, obj);
+            this.Tab00.Installment_Saving_tab.form.shac_div.addChild(obj.name, obj);
 
-            obj = new Static("Static00_00","23","78","102","30",null,null,null,null,null,null,this.Tab00.Installment_Saving_tab.form.Div00.form);
+            obj = new Static("Static00_00","23","78","102","30",null,null,null,null,null,null,this.Tab00.Installment_Saving_tab.form.shac_div.form);
             obj.set_taborder("4");
             obj.set_text("shac_mannum");
-            this.Tab00.Installment_Saving_tab.form.Div00.addChild(obj.name, obj);
+            this.Tab00.Installment_Saving_tab.form.shac_div.addChild(obj.name, obj);
 
-            obj = new Edit("shac_masterv","141","115","119","35",null,null,null,null,null,null,this.Tab00.Installment_Saving_tab.form.Div00.form);
+            obj = new Edit("shac_masterv","141","115","119","35",null,null,null,null,null,null,this.Tab00.Installment_Saving_tab.form.shac_div.form);
             obj.set_taborder("5");
-            this.Tab00.Installment_Saving_tab.form.Div00.addChild(obj.name, obj);
+            this.Tab00.Installment_Saving_tab.form.shac_div.addChild(obj.name, obj);
 
-            obj = new Static("Static00_01","23","120","102","30",null,null,null,null,null,null,this.Tab00.Installment_Saving_tab.form.Div00.form);
+            obj = new Static("Static00_01","23","120","102","30",null,null,null,null,null,null,this.Tab00.Installment_Saving_tab.form.shac_div.form);
             obj.set_taborder("6");
             obj.set_text("shac_master");
-            this.Tab00.Installment_Saving_tab.form.Div00.addChild(obj.name, obj);
+            this.Tab00.Installment_Saving_tab.form.shac_div.addChild(obj.name, obj);
 
-            obj = new Button("Button00","445","6","209","28",null,null,null,null,null,null,this.Tab00.Installment_Saving_tab.form.Div00.form);
+            obj = new Button("Shared_challenge_inquire","445","6","209","28",null,null,null,null,null,null,this.Tab00.Installment_Saving_tab.form.shac_div.form);
             obj.set_taborder("7");
-            obj.set_text("Button00");
-            this.Tab00.Installment_Saving_tab.form.Div00.addChild(obj.name, obj);
+            obj.set_text("공유적금조회");
+            this.Tab00.Installment_Saving_tab.form.shac_div.addChild(obj.name, obj);
 
-            obj = new Button("Button01","201","174","136","36",null,null,null,null,null,null,this.Tab00.Installment_Saving_tab.form.Div00.form);
+            obj = new Button("shared_challenge_add_btn","197","158","136","36",null,null,null,null,null,null,this.Tab00.Installment_Saving_tab.form.shac_div.form);
             obj.set_taborder("8");
-            obj.set_text("Button01");
-            this.Tab00.Installment_Saving_tab.form.Div00.addChild(obj.name, obj);
+            obj.set_text("등록");
+            this.Tab00.Installment_Saving_tab.form.shac_div.addChild(obj.name, obj);
 
-            obj = new Button("Button01","287","259","91","29",null,null,null,null,null,null,this.Tab00.Installment_Saving_tab.form);
+            obj = new Combo("del_shac_codev","160","213","82","27",null,null,null,null,null,null,this.Tab00.Installment_Saving_tab.form.shac_div.form);
+            obj.set_taborder("9");
+            obj.set_innerdataset("Shared_Challenge");
+            obj.set_codecolumn("shac_code");
+            obj.set_text("Combo00");
+            this.Tab00.Installment_Saving_tab.form.shac_div.addChild(obj.name, obj);
+
+            obj = new Button("shac_del_btn","275","214","88","29",null,null,null,null,null,null,this.Tab00.Installment_Saving_tab.form.shac_div.form);
+            obj.set_taborder("10");
+            obj.set_text("삭제");
+            this.Tab00.Installment_Saving_tab.form.shac_div.addChild(obj.name, obj);
+
+            obj = new Button("int_delete_btn","287","259","91","29",null,null,null,null,null,null,this.Tab00.Installment_Saving_tab.form);
             obj.set_taborder("22");
             obj.set_text("삭제");
             this.Tab00.Installment_Saving_tab.addChild(obj.name, obj);
 
-            obj = new Combo("Combo02","194","260","83","30",null,null,null,null,null,null,this.Tab00.Installment_Saving_tab.form);
+            obj = new Combo("del_ins_codev","194","260","83","30",null,null,null,null,null,null,this.Tab00.Installment_Saving_tab.form);
             obj.set_taborder("23");
+            obj.set_innerdataset("Installment_Saving");
+            obj.set_codecolumn("ins_code");
             obj.set_text("Combo02");
             this.Tab00.Installment_Saving_tab.addChild(obj.name, obj);
 
-            obj = new CheckBox("ins_online_chk","110","78","70","27",null,null,null,null,null,null,this.Tab00.Installment_Saving_tab.form);
+            obj = new Radio("ins_onlinev","87","70","139","43",null,null,null,null,null,null,this.Tab00.Installment_Saving_tab.form);
             obj.set_taborder("24");
-            obj.set_text("CheckBox01");
+            obj.set_codecolumn("codecolumn");
+            obj.set_datacolumn("datacolumn");
+            var Tab00_Installment_Saving_tab_form_ins_onlinev_innerdataset = new nexacro.NormalDataset("Tab00_Installment_Saving_tab_form_ins_onlinev_innerdataset", obj);
+            Tab00_Installment_Saving_tab_form_ins_onlinev_innerdataset._setContents("<ColumnInfo><Column id=\"codecolumn\" size=\"256\"/><Column id=\"datacolumn\" size=\"256\"/></ColumnInfo><Rows><Row><Col id=\"codecolumn\">0</Col><Col id=\"datacolumn\">온라인가입(X),0</Col></Row><Row><Col id=\"codecolumn\">1</Col><Col id=\"datacolumn\">온라인가입(O),1</Col></Row></Rows>");
+            obj.set_innerdataset(Tab00_Installment_Saving_tab_form_ins_onlinev_innerdataset);
             this.Tab00.Installment_Saving_tab.addChild(obj.name, obj);
 
             // Layout Functions
@@ -712,11 +735,18 @@
         		//alert('tab 인덱스 2')
         		this.Tab00.Saving_tab.form.sav_onlinev.set_value(0)
         		this.Tab00.Saving_tab.form.shas_code_chk.set_value(true)
+        		this.Tab00.Saving_tab.form.shas_codev.set_enable(true)
         		this.Tab00_Saving_tab_shas_div_shas_inquire_onclick()
         		this.Tab00_Saving_tab_saving_inquire_onclick()
         		this.qua_div_qualification_list()
         	}else if(this.Tab00.tabindex == 3){
         		//alert('tab 인덱스 3')
+        		this.Tab00.Installment_Saving_tab.form.ins_onlinev.set_value(0)
+        		this.Tab00.Installment_Saving_tab.form.shac_code_chk.set_value(true)
+        		this.Tab00.Installment_Saving_tab.form.shac_codev.set_enable(true)
+        		this.Tab00_Installment_Saving_tab_installment_saving_inquire_onclick()
+        		this.Tab00_Installment_Saving_tab_Div00_Shared_challenge_inquire_onclick()
+        		this.qua_div_qualification_list()
         	}
 
         };
@@ -851,6 +881,134 @@
 
 
 
+        //적금 공유 체크박스 이벤트
+        this.Tab00_Installment_Saving_tab_shac_code_chk_onclick = function(obj,e)
+        {
+        	var shac_code_chk = this.Tab00.Installment_Saving_tab.form.shac_code_chk.isChecked()
+        	if (shac_code_chk){
+        		this.Tab00.Installment_Saving_tab.form.shac_codev.set_enable(true)
+        	}else{
+        		this.Tab00.Installment_Saving_tab.form.shac_codev.set_enable(false)
+        		this.Tab00.Installment_Saving_tab.form.shac_codev.set_value('-1')
+        	}
+        };
+        //공유적금리스트
+        this.Tab00_Installment_Saving_tab_Div00_Shared_challenge_inquire_onclick = function(obj,e)
+        {
+        	var id="shared_challengelist";
+        	var url = "http://192.168.25.10:8100/HD_admin_spring/shared_challenge_list";
+        	var reqDs = "";
+        	var respDs="Shared_Challenge=ar";
+        	var args ="";
+        	var callback ="received";
+        	this.transaction(id,url,reqDs,respDs,args,callback);
+        	this.received=function(id,code,message)
+        	{
+        		//alert(id+","+code+","+message);
+        	};
+        };
+        //공유적금 추가
+        this.Tab00_Installment_Saving_tab_Div00_shared_challenge_add_btn_onclick = function(obj,e)
+        {
+        	var shac_mannumv=this.Tab00.Installment_Saving_tab.form.shac_div.form.shac_mannumv.value
+        	var shac_masterv=this.Tab00.Installment_Saving_tab.form.shac_div.form.shac_masterv.value
+
+
+        	this.Tab00.Installment_Saving_tab.form.shac_div.form.shac_mannumv.set_value('')
+        	this.Tab00.Installment_Saving_tab.form.shac_div.form.shac_masterv.set_value('')
+        	var id="shared_challenge_insert";
+        	var url = "http://192.168.25.10:8100//HD_admin_spring/shared_challenge_insert?shac_mannum="+shac_mannumv+"&shac_master="+shac_masterv;
+        	var reqDs = "";
+        	var respDs="";
+        	var args = "";
+        	var callback ="received";
+        	this.transaction(id,url,reqDs,respDs,args,callback);
+        	this.received=function(id,code,message)
+        	{
+        		this.Tab00_Installment_Saving_tab_Div00_Shared_challenge_inquire_onclick()
+        	};
+        };
+        //공유적금삭제
+        this.Tab00_Installment_Saving_tab_shac_div_shac_del_btn_onclick = function(obj,e)
+        {
+        	var del_shac_codev = this.Tab00.Installment_Saving_tab.form.shac_div.form.del_shac_codev.value
+        	var id="shared_challenge_delete";
+        	var url = "http://192.168.25.10:8100//HD_admin_spring/shared_challenge_delete?shac_code="+del_shac_codev;
+        	var reqDs = "";
+        	var respDs="";
+        	var args = "";
+        	var callback ="received";
+        	this.transaction(id,url,reqDs,respDs,args,callback);
+        	this.received=function(id,code,message)
+        	{
+        		this.Tab00_Installment_Saving_tab_Div00_Shared_challenge_inquire_onclick()
+        	};
+        };
+        //적금 리스트
+        this.Tab00_Installment_Saving_tab_installment_saving_inquire_onclick = function(obj,e)
+        {
+        	var id="installment_saving_list";
+        	var url = "http://192.168.25.10:8100/HD_admin_spring/installment_saving_list";
+        	var reqDs = "";
+        	var respDs="Installment_Saving=ar";
+        	var args ="";
+        	var callback ="received";
+        	this.transaction(id,url,reqDs,respDs,args,callback);
+        	this.received=function(id,code,message)
+        	{
+        		//alert(id+","+code+","+message);
+        	};
+
+
+        };
+        //적금 추가
+        this.Tab00_Installment_Saving_tab_installment_saving_add_btn_onclick = function(obj,e)
+        {
+        	var ins_namev = this.Tab00.Installment_Saving_tab.form.ins_namev.value
+        	var ins_onlinev= this.Tab00.Installment_Saving_tab.form.ins_onlinev.value
+        	var ins_interestratev= this.Tab00.Installment_Saving_tab.form.ins_interestratev.value
+        	var ins_dropratev= this.Tab00.Installment_Saving_tab.form.ins_dropratev.value
+        	var ins_putmoneyv= this.Tab00.Installment_Saving_tab.form.ins_putmoneyv.value
+        	var ins_termv= this.Tab00.Installment_Saving_tab.form.ins_termv.value
+        	var shac_codev= this.Tab00.Installment_Saving_tab.form.shac_codev.value
+        	var ins_qua_codev= this.Tab00.Installment_Saving_tab.form.ins_qua_codev.value
+
+        	this.Tab00.Installment_Saving_tab.form.ins_namev.set_value('')
+
+        	this.Tab00.Installment_Saving_tab.form.ins_interestratev.set_value('')
+        	this.Tab00.Installment_Saving_tab.form.ins_dropratev.set_value('')
+        	this.Tab00.Installment_Saving_tab.form.ins_putmoneyv.set_value('')
+        	this.Tab00.Installment_Saving_tab.form.ins_termv.set_value('')
+
+
+        	var id="installment_saving_insert";
+        	var url = "http://192.168.25.10:8100/HD_admin_spring/installment_saving_insert?ins_name="+ins_namev+"&ins_online="+ins_onlinev+"&ins_interestrate="+ins_interestratev+"&ins_droprate="+ins_dropratev+"&ins_putmoney="+ins_putmoneyv+"&ins_term="+ins_termv+"&shac_code="+shac_codev+"&qua_code="+ins_qua_codev;
+        	var reqDs = "";
+        	var respDs="";
+        	var args ="";
+        	var callback ="received";
+        	this.transaction(id,url,reqDs,respDs,args,callback);
+        	this.received=function(id,code,message)
+        	{
+        		this.Tab00_Installment_Saving_tab_installment_saving_inquire_onclick()
+        	};
+        };
+        //적금삭제
+        this.Tab00_Installment_Saving_tab_int_delete_btn_onclick = function(obj,e)
+        {
+        	var del_ins_codev = this.Tab00.Installment_Saving_tab.form.del_ins_codev.value
+        	var id="installment_saving_delete";
+        	var url = "http://192.168.25.10:8100/HD_admin_spring/installment_saving_delete?ins_code="+del_ins_codev;
+        	var reqDs = "";
+        	var respDs="";
+        	var args ="";
+        	var callback ="received";
+        	this.transaction(id,url,reqDs,respDs,args,callback);
+        	this.received=function(id,code,message)
+        	{
+        		this.Tab00_Installment_Saving_tab_installment_saving_inquire_onclick()
+        	};
+        };
 
         });
         
@@ -874,6 +1032,13 @@
             this.Tab00.Saving_tab.form.saving_inquire.addEventHandler("onclick",this.Tab00_Saving_tab_saving_inquire_onclick,this);
             this.Tab00.Saving_tab.form.saving_del_Btn.addEventHandler("onclick",this.Tab00_Saving_tab_saving_del_Btn_onclick,this);
             this.Tab00.Saving_tab.form.sav_onlinev.addEventHandler("onitemchanged",this.Tab00_Saving_tab_Radio00_onitemchanged,this);
+            this.Tab00.Installment_Saving_tab.form.installment_saving_inquire.addEventHandler("onclick",this.Tab00_Installment_Saving_tab_installment_saving_inquire_onclick,this);
+            this.Tab00.Installment_Saving_tab.form.installment_saving_add_btn.addEventHandler("onclick",this.Tab00_Installment_Saving_tab_installment_saving_add_btn_onclick,this);
+            this.Tab00.Installment_Saving_tab.form.shac_code_chk.addEventHandler("onclick",this.Tab00_Installment_Saving_tab_shac_code_chk_onclick,this);
+            this.Tab00.Installment_Saving_tab.form.shac_div.form.Shared_challenge_inquire.addEventHandler("onclick",this.Tab00_Installment_Saving_tab_Div00_Shared_challenge_inquire_onclick,this);
+            this.Tab00.Installment_Saving_tab.form.shac_div.form.shared_challenge_add_btn.addEventHandler("onclick",this.Tab00_Installment_Saving_tab_Div00_shared_challenge_add_btn_onclick,this);
+            this.Tab00.Installment_Saving_tab.form.shac_div.form.shac_del_btn.addEventHandler("onclick",this.Tab00_Installment_Saving_tab_shac_div_shac_del_btn_onclick,this);
+            this.Tab00.Installment_Saving_tab.form.int_delete_btn.addEventHandler("onclick",this.Tab00_Installment_Saving_tab_int_delete_btn_onclick,this);
         };
 
         this.loadIncludeScript("AccountAdd.xfdl");

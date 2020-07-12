@@ -6,8 +6,10 @@ import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
+import admin.VO.Installment_SavingVO;
 import admin.VO.QualificationVO;
 import admin.VO.SavingVO;
+import admin.VO.Shared_ChallengeVO;
 import admin.VO.Shared_SavingVO;
 
 @Repository
@@ -44,6 +46,30 @@ public class AccountDao {
 	}
 	public void shared_saving_delete(Shared_SavingVO vo) {
 		ss.delete("account.shas_delete",vo);
+	}
+	
+	
+	
+	public List<Installment_SavingVO> ins_list(){
+		return ss.selectList("account.ins_list");
+	}
+	public void ins_insert(Installment_SavingVO vo) {
+		ss.insert("account.ins_insert", vo);
+	}
+	public void ins_delete(Installment_SavingVO vo) {
+		ss.delete("account.ins_delete",vo);
+	}
+	
+	
+	
+	public List<Shared_ChallengeVO> shac_list(){
+		return ss.selectList("account.shac_list");
+	}
+	public void shac_insert(Shared_ChallengeVO vo) {
+		ss.insert("account.shac_insert", vo);
+	}
+	public void shac_delete(Shared_ChallengeVO vo) {
+		ss.delete("account.shac_delete", vo);
 	}
 	
 }

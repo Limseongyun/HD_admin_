@@ -7,5 +7,7 @@
   		<typeAlias type="admin.VO.QualificationVO" alias="quavo"/>
   		<typeAlias type="admin.VO.SavingVO" alias="savvo"/>
   		<typeAlias type="admin.VO.Shared_SavingVO" alias="shasvo"/>
+  		<typeAlias type="admin.VO.Installment_SavingVO" alias="insvo"/>
+  		<typeAlias type="admin.VO.Shared_ChallengeVO" alias="shacvo"/>
   	</typeAliases>
   </configuration>

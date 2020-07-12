@@ -14,8 +14,10 @@ import com.nexacro17.xapi.data.DataSet;
 import com.nexacro17.xapi.data.DataTypes;
 import com.nexacro17.xapi.data.datatype.DataType;
 
+import admin.VO.Installment_SavingVO;
 import admin.VO.QualificationVO;
 import admin.VO.SavingVO;
+import admin.VO.Shared_ChallengeVO;
 import admin.VO.Shared_SavingVO;
 import admin.dao.AccountDao;
 
@@ -150,7 +152,80 @@ public class AccountController {
 		accountdao.shared_saving_delete(vo);
 		return mav;
 	}
+
+
+	@RequestMapping("/installment_saving_list")
+	public ModelAndView ins_list() {
+		ModelAndView mav = new ModelAndView("push");
+		DataSet ds = new DataSet("ar");
+		List<Installment_SavingVO> ins_list = accountdao.ins_list();
+		ds.addColumn("ins_code",DataTypes.INT,10);
+		ds.addColumn("ins_name",DataTypes.STRING,50);
+		ds.addColumn("ins_online",DataTypes.INT,10);
+		ds.addColumn("ins_interestrate",DataTypes.INT,10);
+		ds.addColumn("ins_droprate", DataTypes.INT,10);
+		ds.addColumn("ins_putmoney",DataTypes.INT,10);
+		ds.addColumn("ins_term",DataTypes.INT,10);
+		ds.addColumn("shac_code",DataTypes.INT,10);
+		ds.addColumn("qua_code",DataTypes.INT,10);
+		
+		
+		for(Installment_SavingVO e : ins_list) {
+			int row = ds.newRow();
+			ds.set(row, "ins_code", e.getIns_code());
+			ds.set(row,"ins_name",e.getIns_name());
+			ds.set(row,"ins_online",e.getIns_online());
+			ds.set(row,"ins_interestrate",e.getIns_interestrate());
+			ds.set(row,"ins_droprate",e.getIns_droprate());
+			ds.set(row, "ins_putmoney", e.getIns_putmoney());
+			ds.set(row, "ins_term", e.getIns_term());
+			ds.set(row,"shac_code",e.getShac_code());
+			ds.set(row,"qua_code",e.getQua_code());
+		}
+		mav.addObject("ds",ds);
+		return mav;
+	}
+	@RequestMapping("/installment_saving_insert")
+	public ModelAndView ins_insert(Installment_SavingVO vo) {
+		ModelAndView mav = new ModelAndView();
+		accountdao.ins_insert(vo);
+		return mav;
+	}
+	@RequestMapping("/installment_saving_delete")
+	public ModelAndView ins_delete(Installment_SavingVO vo) {
+		ModelAndView mav = new ModelAndView();
+		accountdao.ins_delete(vo);
+		return mav;
+	}
 	
 	
-	
+	@RequestMapping("/shared_challenge_list")
+	public ModelAndView shac_list() {
+		ModelAndView mav = new ModelAndView("push");
+		DataSet ds = new DataSet("ar");
+		ds.addColumn("shac_code",DataTypes.INT,10);
+		ds.addColumn("shac_mannum",DataTypes.INT,10);
+		ds.addColumn("shac_master",DataTypes.INT,10);
+		List<Shared_ChallengeVO> shac_list = accountdao.shac_list();
+		for(Shared_ChallengeVO e : shac_list) {
+			int row = ds.newRow();
+			ds.set(row, "shac_code", e.getShac_code());
+			ds.set(row, "shac_mannum", e.getShac_mannum());
+			ds.set(row,"shac_master",e.getShac_master());
+		}
+		mav.addObject("ds", ds);
+		return mav;
+	}
+	@RequestMapping("/shared_challenge_insert")
+	public ModelAndView shac_insert(Shared_ChallengeVO vo) {
+		ModelAndView mav = new ModelAndView();
+		accountdao.shac_insert(vo);
+		return mav;
+	}
+	@RequestMapping("/shared_challenge_delete")
+	public ModelAndView shac_delete(Shared_ChallengeVO vo) {
+		ModelAndView mav = new ModelAndView();
+		accountdao.shac_delete(vo);
+		return mav;
+	}
 }

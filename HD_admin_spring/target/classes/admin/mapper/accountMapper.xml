@@ -36,6 +36,9 @@
 	  delete from saving where sav_code=#{sav_code}
 	  </delete>
 	  
+	  
+	  
+	  
 	  <select id="shas_list" resultType="shasvo">
 	  select shas_code shas_code,shas_count shas_count,shas_master shas_master from shared_saving order by 1 desc
 	  </select>
@@ -46,4 +49,45 @@
 	  <delete id="shas_delete" parameterType="shasvo">
 	  delete from shared_saving where shas_code=#{shas_code}
 	  </delete>
+	  
+	  
+	  
+	  <select id="shac_list" resultType="shacvo">
+	  select shac_code shac_code,shac_mannum shac_mannum,shac_master shac_master from shared_challenge
+	  </select>
+	  <insert id="shac_insert" parameterType="shacvo">
+	  insert into shared_challenge values(shac_seq.nextVal,#{shac_mannum},#{shac_master})
+	  </insert>
+	  <delete id="shac_delete" parameterType="shacvo">
+	  delete from shared_challenge where shac_code=#{shac_code}
+	  </delete>
+	  
+	  
+	  
+	  
+	  
+	  
+	  <select id="ins_list" resultType="insvo">
+	  select ins_code ins_code,ins_name ins_name,ins_online ins_online,ins_interestrate ins_interestrate
+	  ,ins_droprate ins_droprate,ins_putmoney ins_putmoney,ins_term,shac_code ins_term,shac_code shac_code
+	  ,qua_code qua_code from installment_saving
+	  </select>
+	  
+	  <insert id="ins_insert" parameterType="insvo">
+	   insert into installment_saving values(INS_SEQ.nextval,#{ins_name},#{ins_online},#{ins_interestrate}
+	   ,#{ins_droprate},#{ins_putmoney},#{ins_term}
+	   <choose>
+	   <when test="shac_code=='-1'">
+	   ,null
+	   </when>
+	   <otherwise>
+	   ,#{shac_code}
+	   </otherwise>
+	   </choose>
+	   ,#{qua_code})
+	  </insert>
+	  <delete id="ins_delete" parameterType="insvo">
+	  delete from installment_saving where ins_code=#{ins_code}
+	  </delete>
+	  
   </mapper>
