@@ -286,7 +286,7 @@
                   </Grid>
                   <Static id="Static00" taborder="0" text="ins_code" left="13" top="11" width="67" height="19"/>
                   <Edit id="ins_codev" taborder="2" left="109" top="4" width="68" height="30" enable="false"/>
-                  <Edit id="ins_name" taborder="3" left="110" top="39" width="68" height="30"/>
+                  <Edit id="ins_namev" taborder="3" left="110" top="39" width="68" height="30"/>
                   <Static id="Static00_00" taborder="4" text="ins_name" left="14" top="46" width="67" height="19"/>
                   <Static id="Static00_01" taborder="5" text="ins_online" left="15" top="81" width="67" height="19"/>
                   <Edit id="ins_interestratev" taborder="6" left="112" top="113" width="68" height="30"/>
@@ -299,15 +299,15 @@
                   <Static id="Static00_05" taborder="13" text="ins_term" left="185" top="12" width="67" height="19"/>
                   <Static id="Static00_06" taborder="14" text="shac_code" left="186" top="46" width="67" height="19"/>
                   <Static id="Static00_07" taborder="15" text="qua_code" left="187" top="117" width="67" height="19"/>
-                  <Button id="Button00" taborder="16" text="적금조회" left="611" top="5" width="105" height="22"/>
-                  <Button id="Button02" taborder="17" text="등록" left="225" top="183" width="111" height="20"/>
-                  <Combo id="shac_codev" taborder="18" text="Combo00" left="265" top="48" width="75" height="26"/>
-                  <Combo id="ins_qua_codev" taborder="19" text="Combo01" left="265" top="117" width="75" height="26"/>
-                  <CheckBox id="shac_code_chk" taborder="20" text="공유여부" left="290" top="74" width="106" height="21"/>
-                  <Div id="Div00" taborder="21" text="Div00" left="20" top="310" width="1102" height="261" border="1px dotted">
+                  <Button id="installment_saving_inquire" taborder="16" text="적금조회" left="407" top="8" width="105" height="22" onclick="Tab00_Installment_Saving_tab_installment_saving_inquire_onclick"/>
+                  <Button id="installment_saving_add_btn" taborder="17" text="등록" left="225" top="183" width="121" height="50" onclick="Tab00_Installment_Saving_tab_installment_saving_add_btn_onclick"/>
+                  <Combo id="shac_codev" taborder="18" text="Combo00" left="265" top="48" width="75" height="26" innerdataset="Shared_Challenge" codecolumn="shac_code"/>
+                  <Combo id="ins_qua_codev" taborder="19" text="Combo01" left="265" top="117" width="75" height="26" innerdataset="QualificationList" codecolumn="qua_code"/>
+                  <CheckBox id="shac_code_chk" taborder="20" text="공유여부" left="290" top="74" width="106" height="21" onclick="Tab00_Installment_Saving_tab_shac_code_chk_onclick"/>
+                  <Div id="shac_div" taborder="21" text="Div00" left="20" top="310" width="1102" height="261" border="1px dotted">
                     <Layouts>
                       <Layout>
-                        <Grid id="Shared_Challenge" taborder="0" left="440" top="40" width="646" height="201" binddataset="Shared_Challenge">
+                        <Grid id="Shared_ChallengeGrid" taborder="0" left="440" top="40" width="646" height="201" binddataset="Shared_Challenge">
                           <Formats>
                             <Format id="default">
                               <Columns>
@@ -333,19 +333,38 @@
                           </Formats>
                         </Grid>
                         <Static id="Static00" taborder="1" text="shac_code" left="23" top="30" width="102" height="30"/>
-                        <Edit id="shac_codev" taborder="2" left="141" top="25" width="119" height="35"/>
+                        <Edit id="shac_codev" taborder="2" left="141" top="25" width="119" height="35" enable="false"/>
                         <Edit id="shac_mannumv" taborder="3" left="141" top="73" width="119" height="35"/>
                         <Static id="Static00_00" taborder="4" text="shac_mannum" left="23" top="78" width="102" height="30"/>
                         <Edit id="shac_masterv" taborder="5" left="141" top="115" width="119" height="35"/>
                         <Static id="Static00_01" taborder="6" text="shac_master" left="23" top="120" width="102" height="30"/>
-                        <Button id="Button00" taborder="7" text="Button00" left="445" top="6" width="209" height="28"/>
-                        <Button id="Button01" taborder="8" text="Button01" left="201" top="174" width="136" height="36"/>
+                        <Button id="Shared_challenge_inquire" taborder="7" text="공유적금조회" left="445" top="6" width="209" height="28" onclick="Tab00_Installment_Saving_tab_Div00_Shared_challenge_inquire_onclick"/>
+                        <Button id="shared_challenge_add_btn" taborder="8" text="등록" left="197" top="158" width="136" height="36" onclick="Tab00_Installment_Saving_tab_Div00_shared_challenge_add_btn_onclick"/>
+                        <Combo id="del_shac_codev" taborder="9" text="Combo00" left="160" top="213" width="82" height="27" innerdataset="Shared_Challenge" codecolumn="shac_code"/>
+                        <Button id="shac_del_btn" taborder="10" text="삭제" left="275" top="214" width="88" height="29" onclick="Tab00_Installment_Saving_tab_shac_div_shac_del_btn_onclick"/>
                       </Layout>
                     </Layouts>
                   </Div>
-                  <Button id="Button01" taborder="22" text="삭제" left="287" top="259" width="91" height="29"/>
-                  <Combo id="Combo02" taborder="23" text="Combo02" left="194" top="260" width="83" height="30"/>
-                  <CheckBox id="ins_online_chk" taborder="24" text="CheckBox01" left="110" top="78" width="70" height="27"/>
+                  <Button id="int_delete_btn" taborder="22" text="삭제" left="287" top="259" width="91" height="29" onclick="Tab00_Installment_Saving_tab_int_delete_btn_onclick"/>
+                  <Combo id="del_ins_codev" taborder="23" text="Combo02" left="194" top="260" width="83" height="30" innerdataset="Installment_Saving" codecolumn="ins_code"/>
+                  <Radio id="ins_onlinev" taborder="24" left="87" top="70" width="139" height="43" innerdataset="innerdataset" codecolumn="codecolumn" datacolumn="datacolumn">
+                    <Dataset id="innerdataset">
+                      <ColumnInfo>
+                        <Column id="codecolumn" size="256"/>
+                        <Column id="datacolumn" size="256"/>
+                      </ColumnInfo>
+                      <Rows>
+                        <Row>
+                          <Col id="codecolumn">0</Col>
+                          <Col id="datacolumn">온라인가입(X),0</Col>
+                        </Row>
+                        <Row>
+                          <Col id="codecolumn">1</Col>
+                          <Col id="datacolumn">온라인가입(O),1</Col>
+                        </Row>
+                      </Rows>
+                    </Dataset>
+                  </Radio>
                 </Layout>
               </Layouts>
             </Tabpage>
@@ -461,11 +480,18 @@ this.Tab00_onchanged = function(obj:nexacro.Tab,e:nexacro.TabIndexChangeEventInf
 		//alert('tab 인덱스 2')
 		this.Tab00.Saving_tab.form.sav_onlinev.set_value(0)
 		this.Tab00.Saving_tab.form.shas_code_chk.set_value(true)
+		this.Tab00.Saving_tab.form.shas_codev.set_enable(true)
 		this.Tab00_Saving_tab_shas_div_shas_inquire_onclick()
 		this.Tab00_Saving_tab_saving_inquire_onclick()
 		this.qua_div_qualification_list()
 	}else if(this.Tab00.tabindex == 3){
 		//alert('tab 인덱스 3')
+		this.Tab00.Installment_Saving_tab.form.ins_onlinev.set_value(0)
+		this.Tab00.Installment_Saving_tab.form.shac_code_chk.set_value(true)
+		this.Tab00.Installment_Saving_tab.form.shac_codev.set_enable(true)
+		this.Tab00_Installment_Saving_tab_installment_saving_inquire_onclick()
+		this.Tab00_Installment_Saving_tab_Div00_Shared_challenge_inquire_onclick()
+		this.qua_div_qualification_list()
 	}
 	
 };
@@ -600,6 +626,134 @@ this.Tab00_Saving_tab_shas_div_shas_del_btn_onclick = function(obj:nexacro.Butto
 
 
 
+//적금 공유 체크박스 이벤트
+this.Tab00_Installment_Saving_tab_shac_code_chk_onclick = function(obj:nexacro.CheckBox,e:nexacro.ClickEventInfo)
+{
+	var shac_code_chk = this.Tab00.Installment_Saving_tab.form.shac_code_chk.isChecked()
+	if (shac_code_chk){
+		this.Tab00.Installment_Saving_tab.form.shac_codev.set_enable(true)
+	}else{
+		this.Tab00.Installment_Saving_tab.form.shac_codev.set_enable(false)
+		this.Tab00.Installment_Saving_tab.form.shac_codev.set_value('-1')
+	}
+};
+//공유적금리스트
+this.Tab00_Installment_Saving_tab_Div00_Shared_challenge_inquire_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var id="shared_challengelist";
+	var url = "http://192.168.25.10:8100/HD_admin_spring/shared_challenge_list";
+	var reqDs = "";
+	var respDs="Shared_Challenge=ar";
+	var args ="";
+	var callback ="received";
+	this.transaction(id,url,reqDs,respDs,args,callback);
+	this.received=function(id,code,message)
+	{
+		//alert(id+","+code+","+message);
+	};	
+};
+//공유적금 추가
+this.Tab00_Installment_Saving_tab_Div00_shared_challenge_add_btn_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var shac_mannumv=this.Tab00.Installment_Saving_tab.form.shac_div.form.shac_mannumv.value
+	var shac_masterv=this.Tab00.Installment_Saving_tab.form.shac_div.form.shac_masterv.value
+	
+	
+	this.Tab00.Installment_Saving_tab.form.shac_div.form.shac_mannumv.set_value('')
+	this.Tab00.Installment_Saving_tab.form.shac_div.form.shac_masterv.set_value('')
+	var id="shared_challenge_insert";
+	var url = "http://192.168.25.10:8100//HD_admin_spring/shared_challenge_insert?shac_mannum="+shac_mannumv+"&shac_master="+shac_masterv;
+	var reqDs = "";
+	var respDs="";
+	var args = "";
+	var callback ="received";
+	this.transaction(id,url,reqDs,respDs,args,callback);
+	this.received=function(id,code,message)
+	{
+		this.Tab00_Installment_Saving_tab_Div00_Shared_challenge_inquire_onclick()
+	};	
+};
+//공유적금삭제
+this.Tab00_Installment_Saving_tab_shac_div_shac_del_btn_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var del_shac_codev = this.Tab00.Installment_Saving_tab.form.shac_div.form.del_shac_codev.value
+	var id="shared_challenge_delete";
+	var url = "http://192.168.25.10:8100//HD_admin_spring/shared_challenge_delete?shac_code="+del_shac_codev;
+	var reqDs = "";
+	var respDs="";
+	var args = "";
+	var callback ="received";
+	this.transaction(id,url,reqDs,respDs,args,callback);
+	this.received=function(id,code,message)
+	{
+		this.Tab00_Installment_Saving_tab_Div00_Shared_challenge_inquire_onclick()
+	};	
+};
+//적금 리스트
+this.Tab00_Installment_Saving_tab_installment_saving_inquire_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var id="installment_saving_list";
+	var url = "http://192.168.25.10:8100/HD_admin_spring/installment_saving_list";
+	var reqDs = "";
+	var respDs="Installment_Saving=ar";
+	var args ="";
+	var callback ="received";
+	this.transaction(id,url,reqDs,respDs,args,callback);
+	this.received=function(id,code,message)
+	{
+		//alert(id+","+code+","+message);
+	};	
+	
+	
+};
+//적금 추가
+this.Tab00_Installment_Saving_tab_installment_saving_add_btn_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var ins_namev = this.Tab00.Installment_Saving_tab.form.ins_namev.value
+	var ins_onlinev= this.Tab00.Installment_Saving_tab.form.ins_onlinev.value
+	var ins_interestratev= this.Tab00.Installment_Saving_tab.form.ins_interestratev.value
+	var ins_dropratev= this.Tab00.Installment_Saving_tab.form.ins_dropratev.value
+	var ins_putmoneyv= this.Tab00.Installment_Saving_tab.form.ins_putmoneyv.value
+	var ins_termv= this.Tab00.Installment_Saving_tab.form.ins_termv.value
+	var shac_codev= this.Tab00.Installment_Saving_tab.form.shac_codev.value
+	var ins_qua_codev= this.Tab00.Installment_Saving_tab.form.ins_qua_codev.value
+
+	this.Tab00.Installment_Saving_tab.form.ins_namev.set_value('')
+	
+	this.Tab00.Installment_Saving_tab.form.ins_interestratev.set_value('')
+	this.Tab00.Installment_Saving_tab.form.ins_dropratev.set_value('')
+	this.Tab00.Installment_Saving_tab.form.ins_putmoneyv.set_value('')
+	this.Tab00.Installment_Saving_tab.form.ins_termv.set_value('')
+	
+
+	var id="installment_saving_insert";
+	var url = "http://192.168.25.10:8100/HD_admin_spring/installment_saving_insert?ins_name="+ins_namev+"&ins_online="+ins_onlinev+"&ins_interestrate="+ins_interestratev+"&ins_droprate="+ins_dropratev+"&ins_putmoney="+ins_putmoneyv+"&ins_term="+ins_termv+"&shac_code="+shac_codev+"&qua_code="+ins_qua_codev;
+	var reqDs = "";
+	var respDs="";
+	var args ="";
+	var callback ="received";
+	this.transaction(id,url,reqDs,respDs,args,callback);
+	this.received=function(id,code,message)
+	{
+		this.Tab00_Installment_Saving_tab_installment_saving_inquire_onclick()
+	};	
+};
+//적금삭제
+this.Tab00_Installment_Saving_tab_int_delete_btn_onclick = function(obj:nexacro.Button,e:nexacro.ClickEventInfo)
+{
+	var del_ins_codev = this.Tab00.Installment_Saving_tab.form.del_ins_codev.value
+	var id="installment_saving_delete";
+	var url = "http://192.168.25.10:8100/HD_admin_spring/installment_saving_delete?ins_code="+del_ins_codev;
+	var reqDs = "";
+	var respDs="";
+	var args ="";
+	var callback ="received";
+	this.transaction(id,url,reqDs,respDs,args,callback);
+	this.received=function(id,code,message)
+	{
+		this.Tab00_Installment_Saving_tab_installment_saving_inquire_onclick()
+	};	
+};
 ]]></Script>
     <Objects>
       <Dataset id="QualificationList">
