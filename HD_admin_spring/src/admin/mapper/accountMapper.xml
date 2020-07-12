@@ -16,4 +16,34 @@
 	  delete from qualification where qua_code=#{qua_code}
 	  </delete>
 	  
+	  
+	  <select id="sav_list" resultType="savvo">
+	  select sav_code sav_code, sav_name sav_name, sav_interestrate sav_interestrate, sav_online sav_online,shas_code shas_code,qua_code qua_code from saving order by 1 desc
+	  </select>
+	  <insert id="sav_insert" parameterType="savvo">
+	   insert into Saving values(SAVING_SEQ.nextval,#{sav_name},#{sav_interestrate},#{sav_online}
+	   <choose>
+	   	<when test="shas_code=='-1'">
+	   	,null
+	   	</when>
+	   	<otherwise>
+	   	,#{shas_code}
+	   	</otherwise>
+	   </choose>
+	   ,#{qua_code})
+	  </insert>
+	  <delete id="sav_delete" parameterType="savvo">
+	  delete from saving where sav_code=#{sav_code}
+	  </delete>
+	  
+	  <select id="shas_list" resultType="shasvo">
+	  select shas_code shas_code,shas_count shas_count,shas_master shas_master from shared_saving order by 1 desc
+	  </select>
+	  
+	  <select id="shas_insert" parameterType="shasvo">
+	  insert into shared_saving values(SHARED_SAVING_SEQ.nextval,#{shas_count},#{shas_master})
+	  </select>
+	  <delete id="shas_delete" parameterType="shasvo">
+	  delete from shared_saving where shas_code=#{shas_code}
+	  </delete>
   </mapper>

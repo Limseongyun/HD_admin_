@@ -15,6 +15,8 @@ import com.nexacro17.xapi.data.DataTypes;
 import com.nexacro17.xapi.data.datatype.DataType;
 
 import admin.VO.QualificationVO;
+import admin.VO.SavingVO;
+import admin.VO.Shared_SavingVO;
 import admin.dao.AccountDao;
 
 @Controller
@@ -73,5 +75,82 @@ public class AccountController {
 		accountdao.qualification_delete(vo);
 		return mav;
 	}
+	
+	@RequestMapping("/saving_list")
+	public ModelAndView saving_list() {
+		ModelAndView mav = new ModelAndView("push");
+		List<SavingVO> sav_list=accountdao.saving_list();
+		DataSet ds = new DataSet("ar");
+		ds.addColumn("sav_code",DataTypes.INT,10);
+		ds.addColumn("sav_name",DataTypes.STRING,50);
+		ds.addColumn("sav_interestrate",DataTypes.INT,10);
+		ds.addColumn("sav_online",DataTypes.INT,10);
+		ds.addColumn("shas_code",DataTypes.INT,10);
+		ds.addColumn("qua_code",DataTypes.INT,10);
+		
+		for(SavingVO e : sav_list) {
+			int row =ds.newRow();
+			ds.set(row, "sav_code", e.getSav_code());
+			ds.set(row,"sav_name",e.getSav_name());
+			ds.set(row,"sav_interestrate",e.getSav_interestrate());
+			ds.set(row,"sav_online",e.getSav_online());
+			ds.set(row,"shas_code",e.getShas_code());
+			ds.set(row,"qua_code",e.getQua_code());
+		}
+		mav.addObject("ds",ds);
+		return mav;
+	}
+	@RequestMapping("/saving_insert")
+	public ModelAndView saving_insert(SavingVO vo) {
+		ModelAndView mav = new ModelAndView();
+		System.out.println(vo.getShas_code());
+		accountdao.saving_insert(vo);
+		return mav;
+	}
+	
+	@RequestMapping("/saving_delete")
+	public ModelAndView saving_delete(SavingVO vo) {
+		ModelAndView mav= new ModelAndView();
+		accountdao.saving_delete(vo);
+		return mav;
+	}
+	
+	@RequestMapping("/shared_saving_list")
+	public ModelAndView shared_saving_list() {
+		ModelAndView mav = new ModelAndView("push");
+		List<Shared_SavingVO> shas_list=accountdao.shared_saving_list();
+		DataSet ds = new DataSet("ar");
+		ds.addColumn("shas_code",DataTypes.INT,10);
+		ds.addColumn("shas_count",DataTypes.INT,10);
+		ds.addColumn("shas_master",DataTypes.INT,10);
+		
+		
+		for(Shared_SavingVO e : shas_list) {
+			int row =ds.newRow();
+			ds.set(row, "shas_code", e.getShas_code());
+			ds.set(row,"shas_count",e.getShas_count());
+			ds.set(row,"shas_master",e.getShas_master());
+			
+		}
+		mav.addObject("ds",ds);
+		return mav;
+	}
+	@RequestMapping("/shared_saving_insert")
+	public ModelAndView shared_saving_insert(Shared_SavingVO vo) {
+		ModelAndView mav = new ModelAndView("redirect:/");
+		accountdao.shared_saving_insert(vo);
+		
+		
+		return mav;
+	}
+	
+	@RequestMapping("/shared_saving_delete")
+	public ModelAndView shared_saving_delete(Shared_SavingVO vo) {
+		ModelAndView mav = new ModelAndView();
+		accountdao.shared_saving_delete(vo);
+		return mav;
+	}
+	
+	
 	
 }
